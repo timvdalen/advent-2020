@@ -1,0 +1,21 @@
+{
+    "name": "timvdalen/advent-2020",
+    "license": "UNLICENSED",
+    "authors": [
+        {
+            "name": "Tim van Dalen",
+            "email": "Tim@timvdalen.nl"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^8.19",
+        "guzzlehttp/guzzle": "^7.2",
+        "phpoption/phpoption": "^1.7",
+        "vlucas/phpdotenv": "^5.2"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}
