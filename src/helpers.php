@@ -22,7 +22,7 @@ if(!function_exists('get_input')) {
 		$resp = $client->request('GET', "https://adventofcode.com/2020/day/$day/input", [
 			'cookies' => $jar
 		]);
-		$input = (string)$resp->getBody();
+		$input = trim((string)$resp->getBody());
 		file_put_contents($cache_key, $input);
 		return $input;
 	}
