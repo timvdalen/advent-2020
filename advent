@@ -4,4 +4,22 @@ require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-echo get_input('1');
+if ($argc < 2) {
+	echo "Usage: php advent [day] [part]" . PHP_EOL;
+	exit(1);
+	return;
+}
+
+$day = $argv[1];
+$part = $argv[2] ?? '1';
+
+$class = 'Advent\\Days\\Day' . $day;
+
+if (!class_exists($class)) {
+	echo "Can't find that day (yet)" . PHP_EOL;
+	exit(1);
+	return;
+}
+
+$day = new $class;
+echo $day->{'part' . $part}() . PHP_EOL;
