@@ -34,6 +34,6 @@ abstract class Day {
 	 * @return Collection
 	 */
 	function inputByLine() {
-		return collect(explode("\n", $this->getInput()));
+		return get_input_line_by_line($this->dayNumber);
 	}
 }
